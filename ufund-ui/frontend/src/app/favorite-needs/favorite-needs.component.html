@@ -1,0 +1,10 @@
+<app-user-navbar></app-user-navbar>
+<h2>Favorite Needs</h2>
+<div *ngIf="favorites.length > 0; else noFavorites" class="needs-menu">
+  <a *ngFor="let need of favorites" routerLink="/user/needs/{{need.id}}">
+    {{need.name}}
+  </a>
+</div>
+<ng-template #noFavorites>
+  <p>No favorites yet!</p>
+</ng-template>

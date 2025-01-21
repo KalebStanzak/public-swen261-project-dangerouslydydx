@@ -1,0 +1,19 @@
+<h2>Log In</h2>
+
+<form (ngSubmit)="login()" #loginForm="ngForm">
+    <label for="username">Username:</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      [(ngModel)]="username"
+      required
+      #usernameInput="ngModel"
+    />
+    <div *ngIf="usernameInput.invalid && usernameInput.touched" style="color: red;">
+        Username is required.
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">Log In!</button>
+    <a routerLink="/signup">Sign Up!</a>
+</form>
+  

@@ -1,0 +1,38 @@
+<app-user-navbar></app-user-navbar>
+
+<h2>Your Basket</h2>
+
+<!-- Check if basket is available -->
+<p *ngIf="basket">Funds: {{ basket.funds | currency }}</p>
+
+<!-- Table for needs array in the basket -->
+<table *ngIf="basket?.needs?.length; else emptyBasket">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+      <th>Quantity</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Iterate over needs array -->
+    <tr *ngFor="let need of basket?.needs">
+      <td>{{ need.name }}</td>
+      <td>{{ need.cost | currency }}</td>
+      <td>{{ need.quantity }}</td>
+      <td>{{ need.type }}</td>
+      <td>
+        <button (click)="remove(need)">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- If no needs exist, show this message -->
+<ng-template #emptyBasket>
+  <p>Your basket is empty!</p>
+</ng-template>
+
+
+<a routerLink="/checkout">Checkout</a>

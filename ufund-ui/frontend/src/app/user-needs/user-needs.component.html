@@ -1,0 +1,15 @@
+<app-user-navbar></app-user-navbar>
+<h2>Welcome to the Cupboard!</h2>
+<h4>Click on or search for a need to see details!</h4>
+
+<app-need-search></app-need-search>
+
+<ul class="needs">
+  <li *ngFor="let need of needs">
+    <a routerLink="/user/needs/{{need.id}}">
+        <span class="badge">{{need.cost | currency:'USD'}}</span> {{need.name}}
+    </a>
+  </li>
+</ul>
+
+

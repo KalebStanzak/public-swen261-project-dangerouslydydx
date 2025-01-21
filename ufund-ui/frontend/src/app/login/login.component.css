@@ -1,0 +1,13 @@
+a {
+    background-color: #eee;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-decoration: none;
+}

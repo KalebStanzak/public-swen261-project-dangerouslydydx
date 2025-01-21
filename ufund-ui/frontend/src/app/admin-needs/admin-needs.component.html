@@ -1,0 +1,46 @@
+<app-admin-navbar></app-admin-navbar>
+<h2>Welcome to the Cupboard, Admin!</h2>
+<h4>Click on a need to edit details!</h4>
+
+<ul class="needs">
+  <li *ngFor="let need of needs">
+    <a routerLink="/admin/needs/{{need.id}}">
+        <span class="badge">{{need.id}}</span> {{need.name}}
+    </a>
+    <button type="button" class="delete" title="delete need"
+        (click)="delete(need)">x</button>
+  </li>
+</ul>
+
+<!-- <div>
+  <label for="new-need">Create a need: </label>
+  <input id="new-need" #needName />
+  <input id="new-need" #needCost />
+  <input id="new-need" #needQuantity />
+  <input id="new-need" #needType />
+
+  <button type="button" class="add-button" (click)="add(needName.value, needCost.valueAsNumber, needQuantity.valueAsNumber, needType.value); needName.value=''">
+    Add need
+  </button>
+</div> -->
+
+<div>
+  <label for="need-name">Create a need: </label>
+  <input id="need-name" #needName type="text" placeholder="Enter name" />
+  <input id="need-cost" #needCost type="number" placeholder="Enter cost" />
+  <input id="need-quantity" #needQuantity type="number" placeholder="Enter quantity" />
+  <input id="need-type" #needType type="text" placeholder="Enter type" />
+
+  <button 
+    type="button" 
+    class="add-button" 
+    (click)="add(needName.value, needCost.valueAsNumber, needQuantity.valueAsNumber, needType.value); 
+             needName.value=''; 
+             needCost.value=''; 
+             needQuantity.value=''; 
+             needType.value='';">
+    Add need
+  </button>
+</div>
+
+<app-messages></app-messages>

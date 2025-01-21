@@ -1,0 +1,15 @@
+<app-user-navbar></app-user-navbar>
+<div *ngIf="need">
+
+    <h2>{{need.name | uppercase}} Details</h2>
+    <div><span>Name: </span>{{need.name}}</div>
+    <div><span>Cost: </span>{{need.cost | currency:'USD'}}</div>
+    <div><span>Quantity: </span>{{need.quantity}}</div>
+    <div><span>Type: </span>{{need.type}}</div>
+
+
+<button type="button" (click)="goBack()">go back</button>
+<button type="button" (click)="addNeedToBasket()">add to basket</button>
+<button type="button" (click)="addToFavorites()">Like</button>
+<button type="button" (click)="removeFromFavorites(need)">Dislike</button>
+</div>

@@ -1,0 +1,10 @@
+<app-user-navbar></app-user-navbar>
+<h2>Subscribe to our Mailing List!</h2>
+<form (ngSubmit)="onSubmit(subscribeForm)" #subscribeForm="ngForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" ngModel required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p *ngIf="successMessage">{{ successMessage }}</p>
+  
+  
