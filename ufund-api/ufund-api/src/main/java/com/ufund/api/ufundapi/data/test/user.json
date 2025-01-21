@@ -1,0 +1,23 @@
+[ {
+  "username" : "user1",
+  "permissions" : 1,
+  "uid" : 0,
+  "basket" : {
+    "id" : -1,
+    "name" : "userBasket",
+    "funds" : 0.0,
+    "needs" : [ ]
+  },
+  "favorites" : [ ]
+}, {
+  "username" : "user2",
+  "permissions" : 1,
+  "uid" : 1,
+  "basket" : {
+    "id" : -1,
+    "name" : "userBasket",
+    "funds" : 0.0,
+    "needs" : [ ]
+  },
+  "favorites" : [ ]
+} ]
